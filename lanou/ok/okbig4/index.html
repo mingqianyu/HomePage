@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<style>
+    html{
+        width: 100%;
+        height: 100%;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+    }
+    .dier2{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        background: url("img/index.jpg") no-repeat 0 0 /100% 100%;
+    }
+    .leftBody{
+        width: 778px;
+        height: 100%;
+    }
+    .rightBody{
+        width: 60%;
+    }
+    .leftHeader{
+        width: 100%;
+        height: 96px;
+        background:rgba(33,33,33,1);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .msliderBox{
+        display: flex;
+        align-items: center;
+        width: 514px;
+        color: #A3A2A2;
+        font-size: 24px;
+        height: 100%;
+    }
+    .leftHeaderImg{
+        width: 265px;
+        height: 96px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .mslider{
+        width: 172px;
+        height: 100%;
+    }
+    .mactive{
+        color: #4BBBFA;
+        background: #ccc;
+        height: 100%;
+        border-bottom: 3px solid #4BBBFA;
+    }
+    .mcont{
+        width: 100%;
+        /*height: 1000px;*/
+        height: 100%;
+    }
+    .xian{
+        display: block;
+    }
+    .bx{
+        display: none;
+    }
+</style>
+<body>
+<div class="dier2" style="width: 1920px;margin: 0 auto;">
+    <div class="leftBody">
+        <div class="leftHeader">
+            <div class="leftHeaderImg">
+                <a href="###"><img src="img/oklogo.png" alt=""></a>
+            </div>
+            <div class="msliderBox">
+                <div class="mslider f-allmid mactive"><p>实验文档</p></div>
+                <div class="mslider f-allmid"><p>实验报告</p></div>
+                <div class="mslider f-allmid"><p>实验视频</p></div>
+            </div>
+
+        </div>
+        <div class="mcont xian">
+            <iframe src="../../mdtohtml.html" frameborder="0" width="100%" height="100%"></iframe>
+        </div>
+        <div class="mcont bx">
+            <p>报告</p>
+        </div>
+        <div class="mcont bx">
+            <p>实验视频</p>
+        </div>
+    </div>
+    <div class="rightBody">
+        <iframe src="http://www.runoob.com/" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+
+</div>
+
+</body>
+</html>
+<script src="js/base.js"></script>
+<script src="js/ming.js"></script>
+<script>
+
+    $(window).resize(function () {
+
+        if (($('body').width()) > 1920) {
+            $('.dier').css("margin", "0 auto");
+        } else if (($('body').width()) <= 1200) {
+
+        } else {
+            console.log(typeof ($('body').width()));
+            console.log($('body').width());
+            var num1 = $('body').width();
+            var num = (num1 - 1902) / 2;
+            $('.dier').css("marginLeft", num + "px");
+        }
+    });
+    $(function () {
+        if (($('body').width()) > 1920) {
+            $('.dier').css("margin", "0 auto");
+        } else if (($('body').width()) <= 1200) {
+            $('.dier').css("marginLeft", "-360px");
+            $('.dier').css("overflow", "hidden");
+        } else {
+
+            var num1 = $('body').width();
+            var num = (num1 - 1902) / 2;
+            $('.dier').css("marginLeft", num + "px");
+        }
+    });
+
+</script>

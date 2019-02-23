@@ -1,0 +1,37 @@
+
+// $('.stage1').click(function () {
+//     var src = $(this).attr("tag");
+//     $('.stage-con').css("background","url(" + src + ")");
+// });
+
+// 页面自动居中 JQ选择器, largerBoxName 1920最大盒子 mainBoxName 1200主体
+// $(window).resize(function () {
+//     autoCenterF('#All-box', '.mainBox')
+// });
+// $(function () {
+//     autoCenterF('#All-box', '.mainBox')
+// });
+// function autoCenterF(largerBoxName, mainBoxName) {
+//     let bodyWidth = $('body').width();
+//     if (bodyWidth <= $(largerBoxName).width() && bodyWidth > $(mainBoxName).width()) {
+//         $(largerBoxName).css('marginLeft', ((bodyWidth - $(largerBoxName).width()) / 2) + 'px');
+//     } else if (bodyWidth <= $(mainBoxName).width()) {
+//         $(largerBoxName).css('marginLeft', (($(mainBoxName).width() - $(largerBoxName).width()) / 2) + 'px');
+//     } else {
+//         $(largerBoxName).css('margin', '0 auto');
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

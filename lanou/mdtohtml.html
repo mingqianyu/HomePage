@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title>HTML Preview(markdown to html) - Editor.md examples</title>
+        <link rel="stylesheet" href="editor/examples/css/style.css" />
+        <link rel="stylesheet" href="editor/css/editormd.preview.css" />
+        <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
+        <style>            
+            .editormd-html-preview {
+                width: 90%;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="layout">
+            <header>
+                <h1>Markdown转HTML的显示处理</h1>
+            </header>
+            <div class="btns">
+                <button onclick="location.href='./html-preview-markdown-to-html-custom-toc-container.html';">将 ToC 移到自定义容器层</button>
+            </div>
+            <div id="test-editormd-view">
+               <textarea style="display:none;" name="test-editormd-markdown-doc">###Hello world!</textarea>               
+            </div>
+            <div id="test-editormd-view2">
+                <textarea id="append-test" style="display:none;">
+                    # Java基础 变量
+
+## 数据进制
+### 计算机是怎么储存数据的？
+#### ![屏幕快照 2018-08-02 下午4.41.28.png](https://upload-images.jianshu.io/upload_images/1839485-82aacb618a3563ce.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+- 我们存储在计算机中的数据都是按字节来进行计算的,比字节大的大家都听过的如KB,MB,GB等,而这个B就是字节,每一个字节又是由八位0和1组成的,这种只有0和1的数字进制叫做二进制
+- 内存是计算机用来保存计算时所需要的数据,当Java程序运行时,也是依靠内存存储这些运行期间的数据;计算机存储数据的最小单位为字节,1字节可以存储一个英文字母,一个数字或者一个符号但是一个汉字是两个字节,此处需要注意
+- 内存会根据各式各样不同的数据的需求（即类型）为它申请一块合适的空间
+- 内存分块存储不同的数据,每一块都互相独立,如果你想找到这个数据的话必须知道这个数据的内存地址才可以(内存地址通常用16进制表示线性地址，其取值范围为0x00000000～0xffffffff),那如果让你记忆这种16进制的内存地址编码,一个两个倒是可以,如果很多就很难记忆了。所以我们就可以使用**变量**来代替对内存地址记忆
+## 什么是变量
+### 概念
+变量源于数学，是计算机语言中能储存计算结果或能表示值抽象概念。变量可以通过变量名访问。
+### 使用变量的好处
+1.方便记忆，不用记内存地址编码
+2.更有意义，操作起来更简单，操作一个数据操作内存地址远远没有操作变量来的简单
+## 什么是数据类型
+### Java的数据类型
+![屏幕快照 2018-08-02 下午5.32.36.png](https://upload-images.jianshu.io/upload_images/1839485-3a47c5ca025987f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+### 类型转换
+## 怎么使用变量
+### 变量的使用方式
+![屏幕快照 2018-08-02 下午5.38.03.png](https://upload-images.jianshu.io/upload_images/1839485-65cc986cdb59d167.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+### 变量名命名
+![屏幕快照 2018-08-02 下午5.39.48.png](https://upload-images.jianshu.io/upload_images/1839485-55c3a771f98f6980.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+#### 变量命名实例
+```
+public class HelloLanou {
+	public static void main(String[] args) {
+		String name = "lck";
+		System.out.println(name);
+	}
+}
+```
+
+
+                </textarea>
+            </div>
+        </div>
+        <!-- <script src="js/zepto.min.js"></script>
+		<script>		
+			var jQuery = Zepto;  // 为了避免修改flowChart.js和sequence-diagram.js的源码，所以使用Zepto.js时想支持flowChart/sequenceDiagram就得加上这一句
+		</script> -->
+        <script src="editor/examples/js/jquery.min.js"></script>
+        <script src="editor/lib/marked.min.js"></script>
+        <script src="editor/lib/prettify.min.js"></script>
+        
+        <script src="editor/lib/raphael.min.js"></script>
+        <script src="editor/lib/underscore.min.js"></script>
+        <script src="editor/lib/sequence-diagram.min.js"></script>
+        <script src="editor/lib/flowchart.min.js"></script>
+        <script src="editor/lib/jquery.flowchart.min.js"></script>
+
+        <script src="editor/editormd.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                var testEditormdView, testEditormdView2;
+                
+                $.get("test.md", function(markdown) {
+                    
+				    testEditormdView = editormd.markdownToHTML("test-editormd-view", {
+                        markdown        : markdown ,//+ "\r\n" + $("#append-test").text(),
+                        //htmlDecode      : true,       // 开启 HTML 标签解析，为了安全性，默认不开启
+                        htmlDecode      : "style,script,iframe",  // you can filter tags decode
+                        //toc             : false,
+                        tocm            : true,    // Using [TOCM]
+                        //tocContainer    : "#custom-toc-container", // 自定义 ToC 容器层
+                        //gfm             : false,
+                        //tocDropdown     : true,
+                        // markdownSourceCode : true, // 是否保留 Markdown 源码，即是否删除保存源码的 Textarea 标签
+                        emoji           : true,
+                        taskList        : true,
+                        tex             : true,  // 默认不解析
+                        flowChart       : true,  // 默认不解析
+                        sequenceDiagram : true,  // 默认不解析
+                    });
+                    
+                    //console.log("返回一个 jQuery 实例 =>", testEditormdView);
+                    
+                    // 获取Markdown源码
+                    //console.log(testEditormdView.getMarkdown());
+                    
+                    //alert(testEditormdView.getMarkdown());
+                });
+                    
+                testEditormdView2 = editormd.markdownToHTML("test-editormd-view2", {
+                    htmlDecode      : "style,script,iframe",  // you can filter tags decode
+                    emoji           : true,
+                    taskList        : true,
+                    tex             : true,  // 默认不解析
+                    flowChart       : true,  // 默认不解析
+                    sequenceDiagram : true,  // 默认不解析
+                });
+            });
+        </script>
+    </body>
+</html>

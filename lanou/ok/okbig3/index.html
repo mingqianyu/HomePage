@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/base.css">
+</head>
+<style>
+</style>
+<body style="width: 100%;">
+<div class="dier" style="width: 1920px;margin: 0 auto;overflow: hidden">
+    <div style="width: 1920px;">
+        <img src="img/banner.png" style="width: 1920px;height: 180px;" alt="">
+    </div>
+    <div class="f-allmid" style="width: 1920px;height: 710px; position: relative">
+        <!--<div style="position: relative;height: 967px;width: 1230px;">-->
+        <a onclick="imgone()"><img src="img/1.png" style="width: 284px;height: 313px;position: absolute;left:666px;top: 10px;" alt=""></a>
+        <a onclick="imgtwo()"><img src="img/2.png" style="width: 296px;height: 295px;position: absolute;left:930px;top: 10px;" alt=""></a>
+        <a onclick="imgthree()"><img src="img/3.png" style="width: 311px;height: 244px;position: absolute;left:1040px;top: 300px;" alt=""></a>
+        <a onclick="imgfour()"><img src="img/4.png" style="width: 244px;height: 298px;position: absolute;left:834px;top: 420px;" alt=""></a>
+        <a onclick="imgfive()"><img src="img/5.png" style="width: 334px;height: 244px;position: absolute;left:555px;top: 286px;" alt=""></a>
+        <a onclick="" class="centerA" style="text-align: center;
+        line-height: 299px;
+        width: 219px;
+        height: 227px;
+        padding-left: 50px;
+        padding-bottom: 50px;"><img src="img/6.png" style="width: 219px;height: 207px;position: absolute;left:845px;top: 235px;" alt=""><p style="position: absolute;
+        z-index: 10;
+        font-size:40px;
+        color:rgba(46,29,94,1);
+        font-weight: bold;
+        top: 180px;
+        left: 879px;">实训环境</p></a>
+        <!--</div>-->
+    </div>
+
+</div>
+
+</body>
+</html>
+<script src="js/base.js"></script>
+<script src="js/ming.js"></script>
+<script>
+    function imgone(){
+        window.open("http://124.193.211.2:58090/virtual/start?studentId=99527&courseId=498","","width=800,height=600");
+    }
+    function imgtwo(){
+        window.open("http://124.193.211.2:58090/virtual/start?studentId=99527&courseId=503","","width=800,height=600");
+    }
+    function imgthree(){
+        window.open("http://124.193.211.2:58090/virtual/start?studentId=99527&courseId=488","","width=800,height=600");
+    }
+    function imgfour(){
+        window.open("http://124.193.211.2:58090/virtual/start?studentId=99527&courseId=484","","width=800,height=600");
+    }
+    function imgfive(){
+        window.open("http://124.193.211.2:58090/virtual/start?studentId=99527&courseId=498","","width=800,height=600");
+    }
+
+   $(window).resize(function () {
+       if (($('body').width()) > 1920) {
+           $('.dier').css("margin", "0 auto");
+       } else if (($('body').width()) <= 1200) {
+
+       } else {
+           console.log(typeof ($('body').width()));
+           console.log($('body').width());
+           var num1 = $('body').width();
+           var num = (num1 - 1920) / 2;
+           $('.dier').css("marginLeft", num + "px");
+       }
+   });
+//    $(function () {
+//        if (($('body').width()) > 1920) {
+//            $('.dier').css("margin", "0 auto");
+//        } else if (($('body').width()) <= 1200) {
+//            $('.dier').css("marginLeft", "-360px");
+//            $('.dier').css("overflow", "hidden");
+//        } else {
+//
+//            var num1 = $('body').width();
+//            var num = (num1 - 1902) / 2;
+//            $('.dier').css("marginLeft", num + "px");
+//        }
+//    });
+
+</script>

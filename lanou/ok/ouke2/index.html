@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/html.css">
+</head>
+<body>
+<div class="dier" style="position: relative">
+    <div class="headBox">
+        <a href="###"><p>课程数量 </p><p>300个</p></a>
+        <a href="###"><p>视频时长 </p><p>100H</p></a>
+        <a href="###"><p>课程服务 </p><p>上机实战+视频演示</p></a>
+        <a href="###"><p>课程周期 </p><p>6个月</p></a>
+    </div>
+    <div class="secondBox">
+        <p class="secondP">疯狂Java</p>
+        <div class="secondBtn">
+            <p style="font-size: 26px;">Java基础和数据类型</p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+        <div class="secondBtn secondBtn2">
+            <p style="font-size: 26px;">Java面向对象的实现</p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+        <div class="secondBtn secondBtn3">
+            <p style="font-size: 26px;">Java多线程处理技术</p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+        <div class="secondBtn secondBtn4">
+            <p style="font-size: 26px;">JavaIO与网络通信</p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+    </div>
+    <div class="thirdBox">
+        <p class="secondP thirdP">必知必会MySQL</p>
+        <div class="secondBtn thirdBtn">
+            <p style="font-size: 26px;">MySQL基础理论</p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+        <div class="secondBtn thirdBtn2">
+            <p style="font-size: 26px;">JDBC实操数据库</p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+        <div class="secondBtn thirdBtn3">
+            <p style="font-size: 26px;">Linux基础</p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+        <div class="secondBtn thirdBtn4">
+            <p style="font-size: 26px;">Shell编程开发</p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+        <p class="secondP thirdP2">Linux私房菜</p>
+    </div>
+    <div class="fourthBox">
+        <p class="secondP fourthP">离线计算技术</p>
+        <div class="secondBtn fourthBtn">
+            <p style="font-size: 26px;">Hadoop基础讲解与安装</p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+        <div class="secondBtn fourthBtn2">
+            <p style="font-size: 26px;">HDFS详解
+               </p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+        <div class="secondBtn fourthBtn3">
+            <p style="font-size: 26px;"> MapReduce入门与实战</p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+        <div class="secondBtn fourthBtn4">
+            <p style="font-size: 26px;">Hive基础与进阶</p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+    </div>
+    <div class="fiveBox">
+        <p class="secondP fiveP2">内存计算技术</p>
+        <div class="secondBtn fiveBtn">
+            <p style="font-size: 26px;">Scala核心编程</p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+        <div class="secondBtn fiveBtn2">
+            <p style="font-size: 26px;">Spark高级编程</p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+        <div class="secondBtn fiveBtn3">
+            <p style="font-size: 26px;">Spark进阶编程</p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+    </div>
+    <div class="sixBox">
+        <p class="secondP sixthP">实时计算技术</p>
+        <div class="secondBtn sixBtn">
+            <p style="font-size: 26px;">管道流技术</p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+        <div class="secondBtn sixBtn2">
+            <p style="font-size: 26px;">高并发缓存技术</p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+        <div class="secondBtn sixBtn3">
+            <p style="font-size: 26px;">流式计算技术</p>
+            <a class="myBtn" href="#" class="button">进入学习!</a>
+        </div>
+        <p class="sixthP2">获取学习路径</p>
+    </div>
+</div>
+
+</body>
+</html>
+<script src="js/base.js"></script>
+<script src="js/ming.js"></script>
+<script>
+
+    $(window).resize(function () {
+
+        if (($('body').width()) > 1920) {
+            $('.dier').css("margin", "0 auto");
+        } else if (($('body').width()) <= 1200) {
+
+        } else {
+            console.log(typeof ($('body').width()));
+            console.log($('body').width());
+            var num1 = $('body').width();
+            var num = (num1 - 1902) / 2;
+            $('.dier').css("marginLeft", num + "px");
+        }
+    });
+    $(function () {
+        if (($('body').width()) > 1920) {
+            $('.dier').css("margin", "0 auto");
+        } else if (($('body').width()) <= 1200) {
+            $('.dier').css("marginLeft", "-270px");
+            $('.dier').css("overflow", "hidden");
+        } else {
+
+            var num1 = $('body').width();
+            var num = (num1 - 1902) / 2;
+            $('.dier').css("marginLeft", num + "px");
+        }
+    });
+
+</script>

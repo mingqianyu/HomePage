@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>蓝鸥六周年</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/javaee.css">
+</head>
+<body>
+</div>
+    <div class="vr-vidio">
+        <div class="video">
+        </div>
+    </div>
+
+</body>
+<script src="js/base.js"></script>
+<script src="js/ming.js"></script>
+<script>
+    <!--banner图-->
+    var swiper = new Swiper('.java-swiper1 .swiper-container', {
+        loop: true,
+        pagination: {
+            el: '.java-swiper1 .swiper-pagination',
+        },
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+        }
+    });
+    //滚动表单
+    //滚动表单
+    var swiper = new Swiper('.scroll-form .swiper-container', {
+        loop: true,
+        direction: 'vertical',
+        slidesPerView: 6,
+        pagination: {
+            el: '.scroll-form .swiper-pagination',
+            // clickable: true,
+        },
+        autoplay: {
+            delay: 1000,
+            disableOnInteraction: false,
+        },
+    });
+
+    // 阶段切换
+    $('.stage1').each(function (i, e) {
+        $(e).click(function () {
+            $('.stage1').removeClass('active-box');
+            $(e).addClass('active-box');
+            $('.con-child').css('display', 'none');
+            $('.con-child').eq(i).css('display', 'block');
+
+        });
+    });
+
+    $('.stage1').click(function () {
+        var src = $(this).attr("tag");
+        // console.log(src);
+        $('.stage-con').css("background","url(" + src + ")");
+    });
+
+    function validate(param) {
+        if($('.' + param).val() == '') {
+            $('#' + param + '-error').css('display', 'block');
+        }
+    }
+    function clearError(param) {
+        $('#' + param + '-error').css('display', 'none');
+    }
+    function doSubmit() {
+        var isCanSubmit = 1;
+        if ($('.input-phone').val() == '') {
+            // $('#input-phone-error').css('display', 'block');
+            alert("请输入手机号!")
+            isCanSubmit = 0;
+        }
+        if ($('.input-qq').val() == '') {
+            // $('#input-qq-error').css('display', 'block');
+            alert("请输入QQ号!")
+            isCanSubmit = 0;
+
+        }
+        if ($('.input-name').val() == '') {
+            // $('#input-name-error').css('display', 'block');
+            alert("请输入姓名!")
+
+            isCanSubmit = 0;
+        }
+        if (!isCanSubmit) {
+            return false;
+        } else {
+            $('.submit').submit();
+        }
+    }
+    //allbox
+    $(window).resize(function () {
+
+        if ($('#All-box').width() <= 1920 && $('#All-box').width() >= 1200) {
+            var num1 = $('#All-box').width();
+            console.log(num1);
+            var num = (num1 - 1920) / 2;
+            $('#allbox').css("marginLeft", num + "px");
+        }
+    });
+
+
+    $(function () {
+        if (($('#All-box').width()) <= 1200) {
+            $('#allbox').css("marginLeft", ((1200 - 1920) / 2) + "px");
+        } else if (($('#All-box').width()) <= 1920) {
+            var num1 = $('#All-box').width();
+            var num = (num1 - 1920) / 2;
+            $('#allbox').css("marginLeft", num + "px");
+        }
+    });
+</script>
+</html>
